@@ -1,0 +1,168 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+{% if app.session.flashBag.has('success') %}
+    <div class="alert alert-success" role="alert">
+        {{ app.session.flashBag.get('success')[0] }}
+    </div>
+{% endif %}
+
+    <!-- Hero slider -->
+    <section>
+        <div class="hero">
+            <div class="swiper hero__swiper">
+                <div class="swiper-wrapper">
+                    <!-- slide-item -->
+                    <div class="swiper-slide">
+                        <div class="hero__bg bg-imae"
+                            style="background-image: url(./assets/bg/nike.jpg)                        ;"></div>
+                        <div class="container">
+                            <div class="hero__content">
+                                <div class="hero__txt">
+                                    <h2>Nike Air Force 1</h2>
+                                    <p>The Air Force is a range of athletic shoes made by Nike that began with the Air
+                                        Force 1 and went on to include the Air Force 2, Air Force 3, Air Force STS,
+                                        Air Force 5, Air Force XXV and Air Force 09. The Air Force 1 was created by
+                                        designer Bruce Kilgore and was the first basketball shoe to use the Nike Air
+                                        technology. The shoe is offered in low, mid and high-top style</p>
+                                    <button onclick="window.location.href='/product';" class="btn">Go to collections</button>
+                                </div>
+                                <div class="hero__img">
+                                    <img src="./assets/product-logo/Nike-Shoes-Jordan-PNG-Pic.png " alt="product image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero__bg bg-imae" style="background-image: url(./assets/bg/nike.jpg)
+                        ;"></div>
+                        <div class="container">
+                            <div class="hero__content">
+                                <div class="hero__txt">
+                                    <h2>Nike Air Force 1</h2>
+                                    <p>The Air Force is a range of athletic shoes made by Nike that began with the Air
+                                        Force 1 and went on to include the Air Force 2, Air Force 3, Air Force STS,
+                                        Air Force 5, Air Force XXV and Air Force 09. The Air Force 1 was created by
+                                        designer Bruce Kilgore and was the first basketball shoe to use the Nike Air
+                                        technology. The shoe is offered in low, mid and high-top style</p>
+                                    <button onclick="window.location.href='/product';" class="btn">Go to collections</button>
+                                </div>
+                                <div class="hero__img">
+                                    <img src="./assets/product-logo/Nike-Shoes-Air-Max-PNG-Photos.png"
+                                        alt="product image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="hero-bg bg-imae" style="background-image: url(./assets/bg/taylor-smith-aDZ5YIuedQg-unsplash.jpg)
+                        ;"></div>
+                        <div class="container">
+                            <div class="hero__content">
+                                <div class="hero__txt">
+                                    <h2>Nike Air Force 1</h2>
+                                    <p>The Air Force is a range of athletic shoes made by Nike that began with the Air
+                                        Force 1 and went on to include the Air Force 2, Air Force 3, Air Force STS,
+                                        Air Force 5, Air Force XXV and Air Force 09. The Air Force 1 was created by
+                                        designer Bruce Kilgore and was the first basketball shoe to use the Nike Air
+                                        technology. The shoe is offered in low, mid and high-top style</p>
+                                    <button onclick="window.location.href='/product';" class="btn">Go to collections</button>
+                                </div>
+                                <div class="hero__img">
+                                    <img src="./assets/product-logo/Nike-Shoes-Jordan-PNG-Pic.png" alt="product image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Category -->
+    <div class="category__container">
+        <h2 class="category__title">
+            Category
+        </h2>
+        <div class="category__items">
+            <div class="item__container">
+                <img src="https://cdn.shopify.com/s/files/1/0616/5223/8393/products/b0cfa9cd7fe0d0eda98561a88bf55408.png" alt="">
+            </div>
+            <div class="item__container">
+                <img src="https://d1j8r0kxyu9tj8.cloudfront.net/images/1562124022Z2WecJkW5INJCQG.jpg" alt="">
+            </div>
+            <div class="item__container">
+                <img src="https://images.zeald.com/ic/elvoitdigital/3629066962/JORDAN1%20WEBSITE.1.png" alt="">
+            </div>
+            <div class="item__container">
+                <img src="https://i.pinimg.com/originals/b8/26/72/b82672473fd8d1ec621987f94a33e416.jpg"
+                    alt="">
+            </div>
+            <div class="item__container">
+                <img src="https://i.pinimg.com/originals/79/d2/aa/79d2aa9753b607b75d048187887e12f5.png" alt="">
+            </div>
+            <div class="item__container">
+                <img src="https://i.pinimg.com/736x/26/fe/71/26fe711cb5621085fbc42a426d04d9ef.jpg" alt="">
+            </div>
+            
+        </div>  
+    </div>
+     <!-- /Category -->
+
+    <!-- Top product -->
+    <section>
+        <div class="container">
+            <div class="top-product__header">
+                <h2 class="section__title no-margin">
+                    Our products
+                </h2>
+                <h2 onclick="window.location.href='/product';" class="find_more"> VIEW ALL </h2>
+                <div class="top-product__swiper__btn" id="top-product__swiper__btn">
+                    <div class="swiper-button btn-prev">
+                        <i class="bx bx-chevron-left"></i>
+                    </div>
+                    <div class="swiper-button btn-next">
+                        <i class="bx bx-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper top-product__swiper">
+                 <div class="swiper-wrapper">
+
+
+                 {% for product1 in product %}
+
+                 <div class="swiper-slide">
+                        <div class="product-card">
+                            <div class="product__image">
+                                <img src="{{product1.image }}" alt="product image">
+                                <div class="product_icon hidden ">
+                                    <i class='bx bx-heart'></i> 
+                                    {% if app.user %}                           
+                                    <i onclick="window.location.href='/order/product/{{product1.id}}';" class='bx bx-cart-add' ></i>
+                                    {% endif %}
+                                </div>
+                            </div>
+                           
+                            <div class="product__info">
+                                <h5 class="product__name">{{product1.name}}</h5>
+                                <span class="product__price">${{product1.price}}</span>
+                            </div>
+                        </div>
+                    </div>
+
+                 {% endfor %}
+                    
+                </div> 
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script src="./app.js"></script>
+{% endblock %}

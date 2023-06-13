@@ -1,0 +1,162 @@
+{# {% extends 'base.html.twig' %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <h1>Register</h1>
+
+    {{ form_start(registrationForm) }}
+        {{ form_row(registrationForm.email) }}
+        {{ form_row(registrationForm.plainPassword, {
+            label: 'Password'
+        }) }}
+        {{ form_row(registrationForm.agreeTerms) }}
+
+        <button type="submit" class="btn">Register</button>
+    {{ form_end(registrationForm) }}
+{% endblock %} #}
+
+
+{# <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registerStyle.css">
+    <title>Form validation</title>
+</head>
+
+
+<body>
+    <div class="main">
+        <div class="form-cover">
+        <form action="" method="POST" class="form" id="form-1">
+            <h1 class="heading">Register</h1>
+            <img class="form-logo" src="./nike.jpg" alt="">
+            <p class="desc">"Nike, Just Do It"</p>
+
+            <div class="spacer"></div>
+
+            {{ form_start(registrationForm) }}
+
+            <div class="form-group">
+                <label for="fullname" class="form-label">Full Name</label>
+                <input type="text" name="fullname"  id="fullname" placeholder="Enter your name: " class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                {{ form_row(registrationForm.email) }}
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                {{ form_row(registrationForm.plainPassword) }}
+                <span class="form-message"></span>
+            </div>
+
+            {{ form_row(registrationForm.agreeTerms) }}
+
+            <button type="submit" class="form-submit">Register</button>
+
+            {{ form_end(registrationForm) }}
+        </form>
+        </div>
+    </div>
+</body>
+
+
+</html> #}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="registerStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- link icon -->
+    <link rel="icon" type="image/x -icon" href="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Form validation</title>
+</head>
+
+
+<body>
+    <div class="main">
+        <form action="" method="POST" class="form" id="form-1">
+            <h1 class="heading">Register</h1>
+            <img class="form-logo" src="./nike.jpg" alt="">
+            <p class="desc">"Nike, Just Do It"</p>
+
+            <div class="spacer"></div>
+            {{ form_start(registrationForm) }}
+
+            <div class="form-group">
+                <label for="fullname" class="form-label">Full Name</label>
+                <input type="text" name="fullname"  id="fullname" placeholder="Enter your name: " class="form-control">
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+            
+               <label for="email" class="form-label">Email</label>
+                {{ form_row(registrationForm.email) }}
+                <span class="form-message"></span>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label">Password</label>
+                {{ form_row(registrationForm.plainPassword) }}
+                <span class="form-message"></span>
+            </div>
+
+            {{ form_row(registrationForm.agreeTerms) }}
+
+            <button type="submit" class="form-submit">Register</button>
+
+            {{ form_end(registrationForm) }}
+        </form>
+    </div>
+
+
+
+
+    {# <script src="./validator.js"></script>
+    <script>
+        Validator({
+            form: ('#form-1'),
+            formGroupSelector: '.form-group',
+            rules : [
+                Validator.isRequired('#fullname', "Please enter your full name!"),
+
+                Validator.isRequired('#email',  "Please enter your email!"),
+                Validator.isEmail('#email'),
+                
+
+                Validator.isRequired('#password',  "Please enter your password!"),
+                Validator.minLength('#password', 6),
+
+                Validator.isRequired('#password_confirmation', "Please enter your confirmed password!"),
+                Validator.isConfirmed('#password_confirmation', function(){
+                    return document.querySelector('#form-1 #password').value;
+                }, 'Your confirmed password not match!')
+            ],
+            onSubmit: function(data){
+                //call API
+                console.log(data)
+            }
+      
+        })
+    </script> #}
+</body>
+
+
+</html>

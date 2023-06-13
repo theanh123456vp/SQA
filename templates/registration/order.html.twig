@@ -1,0 +1,948 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <!-- link icon -->
+    <link rel="icon" type="image/x -icon"
+        href="https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/200px-Jumpman_logo.svg.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- link swiper for zoom image slides -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+
+    <link rel="stylesheet" href="./style.css">
+
+    <style>
+    :root{
+    --header-height: 70px;
+    --logo-width: 100px;
+    --color-txt-main: #e4eaf2;
+    --color-txt-gray:#c7cfd9;
+    --color-gray-bg:#8f99a6;
+    --container-max-width: 1300px;
+    --color-main: #626973;
+}
+ul{
+    list-style: none;
+}
+li a{
+    text-decoration: none;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}html{
+    font-size: 16px;
+}
+body{
+    padding-top: var(--header-height);
+    background-color: #f4f4f4;
+    font-family: 'Poppins', sans-serif;
+}
+
+.log {
+    color: red;
+    margin-left: -25px;
+}
+
+.regis {
+    color: rgb(24, 180, 233);
+}
+
+.user {
+    color: orange;
+}
+
+.logo img{
+    width: 9rem;
+} 
+a{
+    color: unset;
+}
+a:hover{
+    color:var(--color-main);
+}
+.container{
+    max-width: var(--container-max-width);
+    margin: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+.btn{
+    margin-top: 15px;
+    border: none;
+    outline: none;
+    padding: 1rem 2.5rem; 
+    text-transform: uppercase;
+    background-color:#626973;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s;
+    border-radius: 5px;
+}
+
+.btn:hover{
+    background-color: #353940;
+}
+
+.no-margin{
+    margin: 0 !important;
+}
+section{
+    margin-bottom: 9rem;
+}
+.section__title{
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 1.7rem ;
+}
+.bg-image{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Header */
+header{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+}
+.header__content{
+    height: var(--header-height);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header__logo img{
+    width: var(--logo-width);
+}
+.btn-close-menu, .btn-open-menu{
+    display: none;
+}
+.header__menu  ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+.header__content nav{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.header__content nav ul{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.header__content ul>li{
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: 2rem;
+}
+
+/* slide */
+.hero__swiper{
+    height: 60vh;
+}
+.hero__swipe .swiper-slide{
+    position: relative;
+}
+.hero__swiper .container{
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left:50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+.hero__content{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.hero__img{
+    text-align: center;
+    width: 50%;
+}
+.hero__txt{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+.hero__txt h2{
+    font-size: 4.5rem;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+.hero__txt p{
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+.hero__bg{
+    position: relative;
+    height: 100%;
+}
+.hero__bg::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(238 238 238  /80%);
+}
+.hero__swiper .swiper-pagination{
+    bottom: 1rem;
+    text-align: left;
+    padding-left: 1rem;
+    max-width: var(--container-max-width);
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.hero__swiper .swiper-pagination-bullet{
+    width: 20px;
+    height: 20px;
+    border-radius: 0;
+    margin: 0 !important;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+    background-color: #353940;
+    transition: 0.9s ease;
+}
+
+/* Category */
+.category__container{
+    max-width: var(--container-max-width);
+    margin: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 100%;
+    margin-bottom: 100px;
+
+}
+.category__title{
+    margin-bottom: 2rem;
+    text-transform: capitalize;
+    font-weight: 900;
+    font-size: 1.7rem ;
+}
+.category__items{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.category__container .item__container{   
+    position: relative;
+    height: 500px;
+    width: 400px;
+    overflow: hidden;
+    margin: 10px;
+    background-color: #333;
+}
+.category__container img{  
+    position: absolute;
+    transition: transform 0.5s ease-in-out;
+}
+ 
+.category__container img:hover{   
+    transform: scale(1.1);
+    opacity: 0.8;
+}
+/* /Category */
+
+/* product__card */
+.product__image{
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    padding-top: 100%;
+    background-color: #333;
+}
+.product__image:hover img{
+    opacity: 0.3;
+}
+.product__image:hover .hidden{
+    display: block;
+    
+}
+
+.product__image img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+}
+.product_icon{
+    color: #fff;
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.product_icon i:hover{
+    transform: scale(1.2);
+}
+.hidden{
+    display: none;
+}
+.product_icon i{
+    padding: 20px;
+    font-size: 36px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+.product__info{
+    margin-top: 2rem;
+
+}
+.product__info>*~*{
+    margin-top: 1rem;
+}
+.product__name{
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+.product__name:hover{
+    color:#55828b ;
+}
+.product__price{
+    display: block;
+    font-weight: 500;
+    color: var(--color-gray-bg);
+}
+
+/* product swiper */
+.top-product__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+
+}
+.top-product__swiper__btn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.top-product__swiper__btn .btn-next{
+    margin-left: 10px;
+}
+.top-product__swiper__btn .swiper-button{
+    width: 40px;
+    height: 40px;
+    background-color: var(--color-txt-main);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.top-product__swiper__btn .swiper-button i{
+    font-size: 2rem;
+    color: var(--color-gray-bg);
+}
+
+
+/* Footer */
+.container{
+	max-width: 1170px;
+	margin:auto;
+
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+ul{
+	list-style: none;
+}
+.footer{
+	margin-top: 200px;
+    left: 0;
+    right: 0;
+	background-color: #fff;
+    padding: 70px 0;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+	font-size: 18px;
+	color: #333;
+	text-transform: capitalize;
+	margin-bottom: 35px;
+	font-weight: 500;
+	position: relative;
+    font-weight: bold;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -10px;
+	background-color: #e91e63;
+	height: 2px;
+	box-sizing: border-box;
+	width: 50px;
+    z-index: 1;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #333;
+	text-decoration: none;
+	font-weight: 300;
+	color: #333;
+	display: block;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #87bba2;
+	padding-left: 8px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #333;
+	transition: all 0.5s ease;
+    border: 1px solid #c9e4ca;
+}
+.footer-col .social-links a:hover{
+	color: #fff;
+	background-color: #55828b;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}
+/* /Footer */
+
+
+
+
+/* Product_order */
+.product__order{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px;
+    height: 500px; 
+    object-fit: contain;  
+}
+.product__order-img {
+    position: relative; 
+    margin-top: 50px;
+    width: 500px;
+    height: 500px;
+    cursor: pointer;
+    background-color: #333;
+}
+.product__order-img .product-img{
+    position: absolute;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s ease;
+}
+.product__order-img .product-img:hover{
+    opacity: 0.5;
+}
+#imgZoom{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    --zoom-x: 50%;
+    --zoom-y: 50%;
+    transform: scale(1.4);
+    pointer-events: none;
+    clip-path: circle(100px at var(--zoom-x) var(--zoom-y));
+    opacity: 0;
+    
+}
+.product__order-detail{
+    width: 40%;
+    height: 250px;
+    
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.product__order-size{
+    margin-top: 20px;
+}
+.product__order-size p{
+    font-weight: 500;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+.product__order-size span{
+    display: inline-flex;
+    border: 1px #b1b1b1 solid;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin-bottom: 10px ;
+    
+}
+.product__order-size span:hover{
+    border: 1px #333 solid;
+}
+.product__order-actions{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-around;
+}
+.product__price{
+    padding: 10px 0;
+
+}
+.product__order-actions button{
+    padding: 20px 80px;
+    height: 60px;
+    margin: auto;
+    border-radius: 5px;
+    border: none;
+    background-color: #5a5a5a;
+    color: #fff;
+    cursor: pointer;
+    transition: 0.3s ease ;
+}
+.product__order-actions button:hover{
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+}
+/* </Product_order> */
+
+
+
+/* Order_form_modal  */
+.order__modal{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 70px;
+    display: none;
+    z-index: 2;
+}
+.modal__container{
+    position: relative;
+    margin: 200px 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    animation: modalFadeIn ease .5s;
+}
+.checkout__details{
+    display: flex;
+    justify-content: center;
+    
+}
+.checkout__details-input{   
+    margin-right: 100px;
+}
+.checkout__details-input input{
+    margin: 6px 0 14px 0;   
+    width: 300px;
+    padding: 10px 10px;
+    border-radius: 5px;
+    border: 1px solid #c7c7c7;
+    
+}
+.checkout__product img{
+    object-fit: cover;
+    width: 200px;
+    height: 200px;
+}
+.checkout__actions{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    transform: translateX(-100%);
+}
+.checkout__actions .pay {
+    display: flex;
+    flex: 1;
+    padding: 10px 20px;
+}
+.checkout__actions .pay input{
+    text-align: center;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    color: #333;
+}
+.checkout__actions .pay p{
+    font-size: 14x;
+    opacity: 0.7;
+}
+
+.checkout__buttons{
+    transform: translateX(80%);
+    display: inline-block;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+.checkout__buttons button{
+    padding: 10px;
+    width: 100px;
+    border: 1px solid #e4e4e4;
+    cursor: pointer;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: 0.3s;
+    background-color: #6e6d6d;
+    color: #fff;
+    font-size: 16px;
+    height: 40px;
+}
+.btn-cancel:hover{
+    background-color: #333;
+    border: none;
+}
+.btn-pay{
+    margin-left: -30px !important;
+    background-color: #adf3fc !important;
+    color: #333 !important;
+    border: none;
+    width: 150px !important;
+}
+.btn-pay:hover{
+    background-color: #fda744 !important;
+    color: #fff !important;
+    border: none;
+}
+.open{
+    display: flex;
+}
+@keyframes modalFadeIn {
+    from {    
+        opacity: 0;
+        transform: translateY(-140px);
+
+    }to {    
+        opacity: 1;
+        transform: translateY(0);
+
+    }
+}
+
+/* </Order_form_modal>  */
+
+
+
+    </style>
+
+    <title>Nike, Just Do It!</title>
+</head>
+
+
+<body>
+
+    <!-- header -->
+    <header>
+        <div class="container">
+            <div class="header__content">
+                <button class="btn-open-menu">
+                    <i class="bx bx-menu"></i>
+                </button>
+                <div class="header__logo">
+                  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Logo_NIKE.svg/1200px-Logo_NIKE.svg.png" alt="logo">
+                </div>
+                <nav>
+                    <button class="btn-close-menu">
+                        <i class="bx bx-left-arrow-alt"></i>
+                    </button>
+                    <ul>
+                        <li>
+                            <a href="/">Home</a>
+                        </li>
+                        <li>
+                            <a href="#">Man</a>
+                        </li>
+                        <li>
+                            <a href="#">Woman</a>
+                        </li>
+                        <li>
+                            <a href="#">Contact</a>
+                        </li>
+                        <li>
+                            <a class="regis" href="/register">Register</a>
+                        </li>
+                        <li>
+                        {% if app.user %}
+							<div class=" sign">
+						    <strong>Signed in as
+							<a class="user">{{ app.user.email }}</a>
+							 |</strong>
+							</div>
+						{% endif %}
+                        </li>
+                        <li>
+                            <a class="log" href="/{{ app.user ? 'logout' : 'login' }}" @click="isOpen = false">
+								{{ app.user ? 'Sign out!' : 'Sign in!' }}
+							</a>
+                        </li>
+                    </ul>
+                </nav>
+                {# <div class="header__menu">
+                    <ul>
+                        <li>
+                            <a href="#">Search</a>
+                        </li>
+                        <li>
+                            <a href="#">Cart</a>
+                        </li>
+                    </ul>
+                </div> #}
+            </div>
+        </div>
+    </header>
+
+    <div class="product__order">
+        <div class="product__order-img">
+            <img class="product-img"
+                src="{{productID.image}}"
+                alt="">
+            <img src="{{productID.image}}"
+                alt="" id="imgZoom">
+        </div>
+        <div class="product__order-detail">
+            <h2 class="product__title">{{productID.name}}</h2>
+            <p class="prodcut__desc">The Air Force is a range of athletic shoes made by Nike that began with the Air
+                Force 1 and went on to include the Air Force 2, Air Force 3, Air Force STS, Air Force 5, Air Force XXV
+                and Air Force 09. The Air Force 1 was created by designer Bruce Kilgore and was the first basketball
+                shoe to use the Nike Air technology</p>
+            <p class="product__price">${{productID.price}}</p>
+            <div class="product__order-size">
+                <p>Select size</p>
+                <span>36</span>
+                <span>37</span>
+                <span>38</span>
+                <span>39</span>
+                <span>40</span>
+                <span>41</span>
+                <span>42</span>
+                <span>43</span>
+                <span>44</span>
+            </div>
+            <div class="product__order-actions">
+                <button class="action-buy">BUY NOW</button>
+                <button class="action-add">ADD TO CART</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="order__modal">
+        <div class="modal__container">
+            <h2>CHECK OUT</h2>
+            {{ form_start(orderForm) }}
+            <div class="checkout__details">
+                <div class="checkout__details-input">
+                    <div class="checkout__name">
+                        <p>Name</p>
+                        {{ form_widget(orderForm.name) }}
+                    </div>
+                    <div class="checkout__phone">
+                        <p>Phone number</p>
+                        {{ form_widget(orderForm.phoneNumber) }}
+                    </div>
+                    <div class="checkout__address">
+                        <p>Address</p>
+                        {{ form_widget(orderForm.address) }}
+                    </div>
+                </div>
+                <div class="checkout__product">
+                    <img src="{{productID.image}}" alt="">
+                    <p>{{productID.name}}</p>
+                    <span>${{productID.price}}</span>
+                </div>
+                
+            </div>
+            {{ form_widget(orderForm.agreeTerms) }}
+            <label for="">Click here to agree to buy!</label>
+            
+                {# <div class="pay pay-by-cash">
+                    <input type="checkbox">
+                    <p>Pay by cash</p>
+                </div>
+                <div class="pay pay-by-credit">
+                    <input type="checkbox">
+                    <p>Pay by credit card</p>
+                </div> #}
+            <div class="checkout__buttons">              
+                <button type="submit" class="btn-pay">Pay</button>
+                <button class="btn-cancel">Cancel</button>
+            </div>
+            {{ form_end(orderForm) }}
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">watch</a></li>
+                        <li><a href="#">bag</a></li>
+                        <li><a href="#">shoes</a></li>
+                        <li><a href="#">dress</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- /Footer -->
+
+
+    <script>
+        // Handle zoom product image
+        let zoom = document.querySelector('.product__order-img');
+        let imgZoom = document.getElementById('imgZoom');
+        zoom.addEventListener('mousemove', (event) => {
+            imgZoom.style.opacity = 1;
+
+            let positionPx = event.x - zoom.getBoundingClientRect().left;
+            let positonPercentX = (positionPx / zoom.offsetWidth) * 100;
+            let positionPy = event.y - zoom.getBoundingClientRect().top;
+            let positonPercentY = (positionPy / zoom.offsetHeight) * 100;
+
+            imgZoom.style.setProperty('--zoom-x', positonPercentX + '%')
+            imgZoom.style.setProperty('--zoom-y', positonPercentY + '%')
+        })
+        console.log('hello')
+
+
+        zoom.addEventListener('mouseout', () => {
+            imgZoom.style.opacity = 0;
+        })
+
+
+
+        
+        // Order form modal
+        const buyButtons = document.querySelectorAll('.action-buy')
+        const modal = document.querySelector('.order__modal')
+        const modalContainer = document.querySelector('.modal__container')
+        const modalClose = document.querySelector('.btn-cancel')
+        function showModal() {
+            modal.classList.add('open')
+        }
+        function hideModal() {
+            modal.classList.remove('open')
+        }
+
+        for(const buyButton of buyButtons) {
+            buyButton.addEventListener('click', showModal)
+        }
+
+        modalClose.addEventListener('click', hideModal)
+
+        modal.addEventListener('click', hideModal)
+        modalContainer.addEventListener('click', function(event){
+        event.stopPropagation()
+        } )
+    </script>
+</body>
+
+</html>

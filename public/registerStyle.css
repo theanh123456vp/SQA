@@ -1,0 +1,141 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+
+    color: #333;
+    font-size: 62.5%;
+    font-family: "Open Sans", sans-serif;
+}
+
+.main {
+    /* background: #d3d3d3; */
+    background-image: url("https://www.graphis.com/media/uploads/cfe/entry/c4c90324-c93b-4015-b789-265e6257e461/nike-athletics.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Change the alpha value to adjust the opacity */
+}
+
+
+
+/* form */
+.form {
+    width: 25%;
+    min-height: 100px;
+    padding: 32px 24px;
+    text-align: center;
+    background: #fff;
+    border-radius: 5px;
+    margin: 8px;
+    box-shadow: 0 2px 5px 0 rgba(57, 63, 73, 0.2);
+    z-index: 2;
+    position: inherit;
+}
+
+.form .heading {
+    font-size: 2rem;
+}
+
+.form .form-logo {
+    height: 80px;
+}
+
+.form .desc {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: lighter;
+    line-height: 2.4rem;
+}
+
+.form-group {
+    display: flex;
+    margin-bottom: 16px;
+    flex-direction: column;
+}
+
+.horizontal {
+    flex-direction: row;
+}
+
+.form-label,
+.form-message {
+    text-align: left;
+}
+
+.form-label {
+    font-weight: 700;
+    padding-bottom: 6px;
+    line-height: 1.8rem;
+    font-size: 1.4rem;
+}
+
+.form-control {
+    width: 100%;
+    height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #b3b3b3;
+    border-radius: 3px;
+    outline: navajowhite;
+    font-size: 1.4rem;
+}
+
+.form-control:hover {
+    border-color: #2093ff;
+}
+
+.form-group.invalid .form-control {
+    border-color: #f33a58;
+}
+
+.form-group.invalid .form-message {
+    color: #f33a58;
+}
+
+.form-message {
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    padding: 4px 0 0;
+}
+
+.form-submit {
+    outline: none;
+    background-color: #b1dcff;
+    margin-top: 12px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+    color: #000000;
+    width: 100%;
+    font-size: 14px;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+}
+
+.form-submit:hover {
+    background-color: #94ddff;
+    color: #fff;
+
+}
+
+.spacer {
+    margin-top: 36px;
+}
